@@ -7,37 +7,14 @@ import {
   CheckCircle, 
   ArrowRight, 
   Shield,
-  Phone,
-  Mail,
-  MapPin,
   Menu,
   X
 } from 'lucide-react';
 import logo from './olleyes__logo__RGB_150dpi.png';
+import vrHeadset from './ChatGPT_Image_May_12__2025__11_45_44_AM-removebg-preview.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    practice: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Thank you for your interest! We\'ll contact you soon.');
-    setFormData({ name: '', email: '', practice: '', message: '' });
-  };
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -74,12 +51,7 @@ function App() {
               >
                 Pricing
               </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-green-600 transition-colors duration-200"
-              >
-                Contact
-              </button>
+
             </div>
 
             {/* Mobile Menu Button */}
@@ -113,12 +85,7 @@ function App() {
                 >
                   Pricing
                 </button>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200"
-                >
-                  Contact
-                </button>
+
               </div>
             </div>
           )}
@@ -126,9 +93,45 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-100 via-green-50 to-blue-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-100 via-green-50 to-blue-50 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-400/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            {/* <div className="flex justify-center mb-8">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-blue-400/20 to-green-400/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-700 animate-pulse"></div>
+
+                <div className="relative bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 transform group-hover:scale-110 group-hover:rotate-1 transition-all duration-500 hover:shadow-green-500/25">
+                  <div className="absolute -top-2 -left-2 w-4 h-4 bg-green-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0s'}}></div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-bounce" style={{animationDelay: '0.5s'}}></div>
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-green-500 rounded-full opacity-60 animate-bounce" style={{animationDelay: '1s'}}></div>
+
+                  <img 
+                    src={vrHeadset} 
+                    alt="HearALL VR Headset" 
+                    className="h-32 w-auto object-contain drop-shadow-2xl filter brightness-110 contrast-110"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                </div>
+
+                <div className="absolute inset-0 rounded-3xl border-2 border-green-400/30 group-hover:border-green-400/50 transition-all duration-500 animate-ping"></div>
+              </div>
+            </div> */}
+            
+            <div className="flex justify-center mb-8">
+            <img 
+                    src={vrHeadset} 
+                    alt="HearALL VR Headset" 
+                    className="h-96 w-auto object-contain drop-shadow-2xl filter brightness-110 contrast-110"
+                  />
+            </div>
+            
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               HearALL – The Future of{' '}
               <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
@@ -136,6 +139,7 @@ function App() {
               </span>{' '}
               in Your Practice
             </h1>
+            
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
               A Virtual Reality Platform to screen, diagnose, and provide hearing care in one simple flow.
             </p>
@@ -437,126 +441,7 @@ function App() {
             </button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Contact Form */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="practice" className="block text-sm font-medium text-gray-700 mb-2">
-                    Practice Name
-                  </label>
-                  <input
-                    type="text"
-                    id="practice"
-                    name="practice"
-                    value={formData.practice}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Phone className="h-6 w-6 text-green-500 mr-4" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Phone</p>
-                      <p className="text-gray-600">1-800-HEARALL</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <Mail className="h-6 w-6 text-blue-500 mr-4" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Email</p>
-                      <p className="text-gray-600">info@hearall.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="h-6 w-6 text-green-500 mr-4" />
-                    <div>
-                      <p className="font-semibold text-gray-900">Address</p>
-                      <p className="text-gray-600">123 Medical Plaza, Suite 400<br />Healthcare City, HC 12345</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">Why Choose HearALL?</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">FDA-compliant hearing testing</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Seamless workflow integration</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Increased practice revenue</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">Comprehensive patient care</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -565,11 +450,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-6 md:mb-0">
-              <Headphones className="h-8 w-8 text-green-400 mr-2" />
-              <span className="text-2xl font-bold">HearALL</span>
+              <img src={logo} alt="HearALL Logo" className="h-12 w-auto bg-white rounded-full" />
             </div>
             <div className="text-center md:text-right">
-              <p className="text-gray-400">© 2024 HearALL. All rights reserved.</p>
+              <p className="text-gray-400">© 2025 Olleyes. All rights reserved.</p>
               <p className="text-gray-400 mt-1">Revolutionizing hearing care through technology</p>
             </div>
           </div>
