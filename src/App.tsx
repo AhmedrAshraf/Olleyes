@@ -385,7 +385,7 @@ function App() {
             {/* Premium Plan */}
             <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-200">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Premium Plan</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Standard Plan</h3>
                 <div className="text-4xl font-bold text-green-600 mb-2">$125</div>
                 <p className="text-gray-600 mb-6">/month</p>
                 
