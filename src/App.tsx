@@ -13,6 +13,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
+import logo from './olleyes__logo__RGB_150dpi.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,10 +51,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Headphones className="h-8 w-8 text-green-500 mr-2" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                HearALL
-              </span>
+              <img src={logo} alt="HearALL Logo" className="h-12 w-auto" />
             </div>
             
             {/* Desktop Menu */}
@@ -167,7 +165,7 @@ function App() {
             <div className="text-center group">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg transform group-hover:scale-105 transition-all duration-300">
                 <Monitor className="h-16 w-16 text-green-500 mx-auto mb-3" />
-                <p className="text-sm font-medium text-gray-700">Web Dashboard</p>
+                <p className="text-sm font-medium text-gray-700">Web Application</p>
               </div>
             </div>
           </div>
@@ -183,9 +181,6 @@ function App() {
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 animate-pulse">
                 48 million Americans have hearing impairments
               </h2>
-              <p className="text-xl md:text-2xl text-gray-600 mb-6">
-                — compared to just <span className="font-bold text-blue-600">3 million with Glaucoma</span>
-              </p>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 Hearing loss is more prevalent than most doctors think. By offering hearing care in your office, 
                 you can help more patients while generating additional revenue for your practice.
@@ -233,7 +228,7 @@ function App() {
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
               Since 2022, the FDA allows the sale of Over-the-Counter (OTC) hearing aids for mild to moderate 
-              hearing impairment — no prescription required. HearALL also offers multiple hearing aid models, 
+              hearing impairment — no prescription required. The HearALL platform also offers multiple FDA registered hearing aid models, 
               some connected via mobile apps for patient convenience.
             </p>
           </div>
@@ -272,7 +267,7 @@ function App() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Offer Hearing Aids</h3>
                 <p className="text-gray-600 text-lg">
-                  Offer hearing aids to those affected with our range of FDA-approved solutions.
+                  Offer hearing aids to those affected with our range of FDA-registered hearing aids.
                 </p>
               </div>
             </div>
@@ -305,47 +300,8 @@ function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Smart Plan */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-200">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Smart Plan</h3>
-                <div className="text-4xl font-bold text-green-600 mb-2">$49</div>
-                <p className="text-gray-600 mb-6">/month</p>
-                <p className="text-sm text-gray-500 mb-8">Hearing aid commitment required</p>
-                
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Basic hearing tests</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Patient data storage</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Email support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Hearing aid access</span>
-                  </li>
-                </ul>
-
-                <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                  Choose Plan
-                </button>
-              </div>
-            </div>
-
             {/* Standard Plan */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-300 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  Most Popular
-                </span>
-              </div>
-              
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-green-200">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Standard Plan</h3>
                 <div className="text-4xl font-bold text-blue-600 mb-2">$99</div>
@@ -354,27 +310,73 @@ function App() {
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
-                    <span className="text-gray-700">All features included</span>
+                    <span className="text-gray-700">Screening Hearing Test</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
-                    <span className="text-gray-700">Unlimited tests</span>
+                    <span className="text-gray-700">Full VRP access</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
-                    <span className="text-gray-700">Advanced analytics</span>
+                    <span className="text-gray-700">Patient data storage</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
+                    <span className="text-gray-700">Free Updates</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
                     <span className="text-gray-700">Phone & email support</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mr-3" />
-                    <span className="text-gray-700">Integration tools</span>
-                  </li>
                 </ul>
 
                 <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                  Choose Plan
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-300 relative">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  Most Popular
+                </span>
+              </div>
+
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Smart Plan</h3>
+                <div className="text-4xl font-bold text-green-600 mb-2">$49</div>
+                <p className="text-gray-600 mb-6">/month</p>
+                <p className="text-sm text-gray-500 mb-8">Hearing Aid Commitments</p>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">Screening Hearing Test</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">Full VRP access</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">Patient data storage</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">Free Updates</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">Phone & email support</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                    <span className="text-gray-700">3 hearing aids/ month commitment</span>
+                  </li>
+                </ul>
+
+                <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                   Choose Plan
                 </button>
               </div>
@@ -390,23 +392,23 @@ function App() {
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">All features included</span>
+                    <span className="text-gray-700">Screening Hearing Test</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Unlimited tests</span>
+                    <span className="text-gray-700">Full VRP access</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Priority support</span>
+                    <span className="text-gray-700">Patient data storage</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Custom integrations</span>
+                    <span className="text-gray-700">Free Updates</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                    <span className="text-gray-700">Training & onboarding</span>
+                    <span className="text-gray-700">Phone & email support</span>
                   </li>
                 </ul>
 
